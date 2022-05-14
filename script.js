@@ -12,7 +12,7 @@ const tracks = [
 let track = 0;
 audio.addEventListener("ended", (e) => {
   track = track == tracks.length - 1 ? 0 : track + 1;
-  audio.src = `soundtrack/${tracks[track]}.wav`;
+  audio.src = `./soundtrack/${tracks[track]}.wav`;
   audio.play();
 });
 
