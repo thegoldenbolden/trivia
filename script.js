@@ -56,23 +56,7 @@ async function fetchQuestions() {
   } catch (err) {
     console.log(err);
     return {
-      results: [
-        {
-          question: "whats my name",
-          correct_answer: "eisenberg",
-          incorrect_answers: ["yahoo", "bugs", "sharks"],
-        },
-        {
-          question: "whats your name",
-          correct_answer: "yahoo",
-          incorrect_answers: ["eisenberg", "bugs", "sharks"],
-        },
-        {
-          question: "",
-          correct_answer: "eisenberg",
-          incorrect_answers: ["yahoo", "bugs", "sharks"],
-        },
-      ],
+      results: [],
     };
   }
 }
@@ -160,11 +144,6 @@ function onAnswerClick(e) {
 
     // Find correct answer position
     const correctAnswerPosition = [...answerEl.childNodes].findIndex((el) => {
-      console.log({
-        a: el.childNodes[1].innerHTML.toLowerCase(),
-        b: q.correct_answer.toLowerCase(),
-      });
-
       return (
         el.childNodes[1].innerHTML.toLowerCase() ===
         q.correct_answer.toLowerCase()
